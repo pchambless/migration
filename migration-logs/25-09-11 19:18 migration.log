@@ -1,0 +1,24 @@
+
+=================================================================
+[0;34m[19:18:00][0m 🚀 Starting: 12 - Convert Indices
+=================================================================
+[0;34m[19:18:00][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:18:00][0m Executing procedure: convertIndices
+[0;34m[19:18:00][0m Description: Convert Indices from production to test format
+[0;32m[SUCCESS][0m Procedure convertIndices completed in 11s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 12 - Convert Indices - Convert Indices completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:18:11][0m 🚀 Starting: 13 - Stop SSH Tunnels
+=================================================================
+[0;34m[19:18:11][0m Stopping SSH tunnels...
+[0;32m[SUCCESS][0m SSH tunnels stopped successfully
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 13 - Stop SSH Tunnels - SSH tunnels closed cleanly
+=================================================================
+
+[0;34m[19:18:11][0m Migration cleanup complete

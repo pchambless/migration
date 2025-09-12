@@ -1,0 +1,141 @@
+
+=================================================================
+[0;34m[19:24:09][0m 🚀 Starting: 03 - Setup Whatsfresh Database
+=================================================================
+[0;34m[19:24:09][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:09][0m Executing procedure: copyToWhatsfresh
+[0;34m[19:24:09][0m Description: Clear whatsfresh and copy base tables from wf_stage
+[0;32m[SUCCESS][0m Procedure copyToWhatsfresh completed in 3s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 03 - Setup Whatsfresh Database - Base tables copied to whatsfresh successfully
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:12][0m 🚀 Starting: 04 - Convert Ingredient Batches
+=================================================================
+[0;34m[19:24:12][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:12][0m Executing procedure: convertIngrBtch
+[0;34m[19:24:12][0m Description: Converting ingredient batches from production to test format
+[0;32m[SUCCESS][0m Procedure convertIngrBtch completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 04 - Convert Ingredient Batches - Ingredient batches converted
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:14][0m 🚀 Starting: 05 - Convert Products
+=================================================================
+[0;34m[19:24:14][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:14][0m Executing procedure: convertProd
+[0;34m[19:24:14][0m Description: Converting products from production to test format
+[0;32m[SUCCESS][0m Procedure convertProd completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 05 - Convert Products - Products converted
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:15][0m 🚀 Starting: 06 - Convert Product Batches
+=================================================================
+[0;34m[19:24:15][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:15][0m Executing procedure: convertProdBtch
+[0;34m[19:24:15][0m Description: Convert Product Batches from production to test format
+[0;32m[SUCCESS][0m Procedure convertProdBtch completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 06 - Convert Product Batches - Convert Product Batches completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:16][0m 🚀 Starting: 07 - Convert Recipe Batches
+=================================================================
+[0;34m[19:24:16][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:16][0m Executing procedure: convertRcpeBtch
+[0;34m[19:24:16][0m Description: Convert Recipe Batches from production to test format
+[0;32m[SUCCESS][0m Procedure convertRcpeBtch completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 07 - Convert Recipe Batches - Convert Recipe Batches completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:17][0m 🚀 Starting: 08 - Convert Task Batches
+=================================================================
+[0;34m[19:24:17][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:17][0m Executing procedure: convertTaskBtch
+[0;34m[19:24:17][0m Description: Convert Task Batches from production to test format
+[0;32m[SUCCESS][0m Procedure convertTaskBtch completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 08 - Convert Task Batches - Convert Task Batches completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:18][0m 🚀 Starting: 09 - Convert Product Ingredient Mapping
+=================================================================
+[0;34m[19:24:18][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:18][0m Executing procedure: convertProdIngr_Map
+[0;34m[19:24:18][0m Description: Convert Product Ingredient Mapping from production to test format
+[0;32m[SUCCESS][0m Procedure convertProdIngr_Map completed in 16s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 09 - Convert Product Ingredient Mapping - Convert Product Ingredient Mapping completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:34][0m 🚀 Starting: 10 - Create Shop Events
+=================================================================
+[0;34m[19:24:34][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:34][0m Executing procedure: createShopEvent
+[0;34m[19:24:34][0m Description: Create Shop Events from production to test format
+[0;32m[SUCCESS][0m Procedure createShopEvent completed in 1s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 10 - Create Shop Events - Create Shop Events completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:35][0m 🚀 Starting: 11 - Create Measure Units
+=================================================================
+[0;34m[19:24:35][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:35][0m Executing procedure: ConvertMeasureUnits
+[0;34m[19:24:35][0m Description: Create Measure Units from production to test format
+[0;32m[SUCCESS][0m Procedure ConvertMeasureUnits completed in 5s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 11 - Create Measure Units - Convert Measure Units completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:40][0m 🚀 Starting: 12 - Convert Indices
+=================================================================
+[0;34m[19:24:40][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:24:40][0m Executing procedure: convertIndices
+[0;34m[19:24:40][0m Description: Convert Indices from production to test format
+[0;32m[SUCCESS][0m Procedure convertIndices completed in 11s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 12 - Convert Indices - Convert Indices completed
+=================================================================
+
+
+=================================================================
+[0;34m[19:24:51][0m 🚀 Starting: 13 - Stop SSH Tunnels
+=================================================================
+[0;34m[19:24:51][0m Stopping SSH tunnels...
+[0;32m[SUCCESS][0m SSH tunnels stopped successfully
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 13 - Stop SSH Tunnels - SSH tunnels closed cleanly
+=================================================================
+
+[0;34m[19:24:51][0m Migration cleanup complete

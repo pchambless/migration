@@ -1,0 +1,266 @@
+[19:41:03] 🚀 Starting Complete Migration Process
+[19:41:03] ======================================
+[19:41:03] Running pre-flight checks...
+[19:41:03] Tunnel management will be handled by step 00
+[SUCCESS] Pre-flight checks passed
+[19:41:03] Starting migration with 14 steps...
+[19:41:03] About to start executing steps...
+[19:41:03] DEBUG: Testing loop entry...
+[19:41:03] DEBUG: Number of steps in array: 14
+[19:41:03] DEBUG: First step: 00_start_tunnels.sh
+[19:41:03] DEBUG: Starting for loop...
+[19:41:03] 📍 Step 1/14: 00_start_tunnels.sh
+[19:41:03] DEBUG: Executing ./migration/steps_v2/00_start_tunnels.sh...
+[19:41:03] 🚀 Starting: 00 - Start SSH Tunnels
+
+=================================================================
+=================================================================
+[19:41:03] Checking SSH tunnel status...
+[19:41:03] Checking tunnel status...
+[ERROR] Production tunnel not accessible on port 13306
+[ERROR] Run: ./session/start.sh prodServer
+[19:41:03] Starting SSH tunnel manager...
+[19:41:14] Waiting 5 seconds for tunnels to establish...
+[19:41:19] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[SUCCESS] Both SSH tunnels started and accessible
+[SUCCESS] ✅ Completed: 00 - Start SSH Tunnels - SSH tunnels started successfully
+=================================================================
+=================================================================
+
+[19:41:19] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 1 completed: 00_start_tunnels.sh
+[19:41:19] 📍 Step 2/14: 01_clear_wf_stage.sh
+[19:41:19] DEBUG: Executing ./migration/steps_v2/01_clear_wf_stage.sh...
+[19:41:19] 🚀 Starting: 01 - Clear Staging Database
+
+=================================================================
+=================================================================
+[19:41:19] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:19] Clearing wf_stage database...
+[SUCCESS] wf_stage database cleared successfully
+[SUCCESS] ✅ Completed: 01 - Clear Staging Database - Staging database ready for fresh data
+=================================================================
+=================================================================
+
+[19:41:21] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 2 completed: 01_clear_wf_stage.sh
+[19:41:21] 📍 Step 3/14: 02_bulk_copy_to_staging.sh
+[19:41:21] DEBUG: Executing ./migration/steps_v2/02_bulk_copy_to_staging.sh...
+[19:41:22] 🚀 Starting: 02 - Bulk Copy to Staging
+
+=================================================================
+=================================================================
+[19:41:22] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:22] Bulk copying 17 tables to wf_stage database...
+[19:41:22] Ensuring wf_stage database exists...
+[19:41:22] Exporting 17 tables from production...
+[19:41:31] Bulk export completed successfully
+[19:41:31] Importing tables to wf_stage database...
+[19:41:52] Bulk import completed successfully
+[19:41:52] Removing generated columns from staging tables...
+[SUCCESS] Bulk copy completed: 17 tables in 32s
+[SUCCESS] ✅ Completed: 02 - Bulk Copy to Staging - All tables copied to wf_stage and generated columns removed
+=================================================================
+=================================================================
+
+[19:41:54] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 3 completed: 02_bulk_copy_to_staging.sh
+[19:41:54] 📍 Step 4/14: 03_setup_whatsfresh.sh
+[19:41:54] DEBUG: Executing ./migration/steps_v2/03_setup_whatsfresh.sh...
+[19:41:54] 🚀 Starting: 03 - Setup Whatsfresh Database
+
+=================================================================
+=================================================================
+[19:41:54] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:54] Executing procedure: copyToWhatsfresh
+[19:41:54] Description: Clear whatsfresh and copy base tables from wf_stage
+[SUCCESS] Procedure copyToWhatsfresh completed in 4s
+[SUCCESS] ✅ Completed: 03 - Setup Whatsfresh Database - Base tables copied to whatsfresh successfully
+=================================================================
+=================================================================
+
+[19:41:58] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 4 completed: 03_setup_whatsfresh.sh
+[19:41:58] 📍 Step 5/14: 04_convertIngrBtch.sh
+[19:41:58] DEBUG: Executing ./migration/steps_v2/04_convertIngrBtch.sh...
+[19:41:58] 🚀 Starting: 04 - Convert Ingredient Batches
+
+=================================================================
+=================================================================
+[19:41:58] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:58] Executing procedure: convertIngrBtch
+[19:41:58] Description: Converting ingredient batches from production to test format
+[SUCCESS] Procedure convertIngrBtch completed in 1s
+[SUCCESS] ✅ Completed: 04 - Convert Ingredient Batches - Ingredient batches converted
+=================================================================
+=================================================================
+
+[19:41:59] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 5 completed: 04_convertIngrBtch.sh
+[19:41:59] 📍 Step 6/14: 05_convertProd.sh
+[19:41:59] DEBUG: Executing ./migration/steps_v2/05_convertProd.sh...
+[19:41:59] 🚀 Starting: 05 - Convert Products
+
+=================================================================
+=================================================================
+[19:41:59] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:59] Executing procedure: convertProd
+[19:41:59] Description: Converting products from production to test format
+[SUCCESS] Procedure convertProd completed in 0s
+[SUCCESS] ✅ Completed: 05 - Convert Products - Products converted
+=================================================================
+=================================================================
+
+[19:41:59] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 6 completed: 05_convertProd.sh
+[19:41:59] 📍 Step 7/14: 06_convertProdBtch.sh
+[19:41:59] DEBUG: Executing ./migration/steps_v2/06_convertProdBtch.sh...
+[19:41:59] 🚀 Starting: 06 - Convert Product Batches
+
+=================================================================
+=================================================================
+[19:41:59] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:41:59] Executing procedure: convertProdBtch
+[19:41:59] Description: Convert Product Batches from production to test format
+[SUCCESS] Procedure convertProdBtch completed in 1s
+[SUCCESS] ✅ Completed: 06 - Convert Product Batches - Convert Product Batches completed
+=================================================================
+=================================================================
+
+[19:42:00] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 7 completed: 06_convertProdBtch.sh
+[19:42:00] 📍 Step 8/14: 07_convertRcpeBtch.sh
+[19:42:00] DEBUG: Executing ./migration/steps_v2/07_convertRcpeBtch.sh...
+[19:42:00] 🚀 Starting: 07 - Convert Recipe Batches
+
+=================================================================
+=================================================================
+[19:42:00] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:00] Executing procedure: convertRcpeBtch
+[19:42:00] Description: Convert Recipe Batches from production to test format
+[SUCCESS] Procedure convertRcpeBtch completed in 1s
+[SUCCESS] ✅ Completed: 07 - Convert Recipe Batches - Convert Recipe Batches completed
+=================================================================
+=================================================================
+
+[19:42:01] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 8 completed: 07_convertRcpeBtch.sh
+[19:42:01] 📍 Step 9/14: 08_convertTaskBtch.sh
+[19:42:01] DEBUG: Executing ./migration/steps_v2/08_convertTaskBtch.sh...
+[19:42:01] 🚀 Starting: 08 - Convert Task Batches
+
+=================================================================
+=================================================================
+[19:42:01] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:01] Executing procedure: convertTaskBtch
+[19:42:01] Description: Convert Task Batches from production to test format
+[SUCCESS] Procedure convertTaskBtch completed in 1s
+[SUCCESS] ✅ Completed: 08 - Convert Task Batches - Convert Task Batches completed
+=================================================================
+=================================================================
+
+[19:42:02] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 9 completed: 08_convertTaskBtch.sh
+[19:42:02] 📍 Step 10/14: 09_convertProdIngr_Map.sh
+[19:42:02] DEBUG: Executing ./migration/steps_v2/09_convertProdIngr_Map.sh...
+[19:42:02] 🚀 Starting: 09 - Convert Product Ingredient Mapping
+
+=================================================================
+=================================================================
+[19:42:02] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:02] Executing procedure: convertProdIngr_Map
+[19:42:02] Description: Convert Product Ingredient Mapping from production to test format
+[SUCCESS] Procedure convertProdIngr_Map completed in 17s
+[SUCCESS] ✅ Completed: 09 - Convert Product Ingredient Mapping - Convert Product Ingredient Mapping completed
+=================================================================
+=================================================================
+
+[19:42:19] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 10 completed: 09_convertProdIngr_Map.sh
+[19:42:19] 📍 Step 11/14: 10_createShopEvent.sh
+[19:42:19] DEBUG: Executing ./migration/steps_v2/10_createShopEvent.sh...
+[19:42:19] 🚀 Starting: 10 - Create Shop Events
+
+=================================================================
+=================================================================
+[19:42:19] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:19] Executing procedure: createShopEvent
+[19:42:19] Description: Create Shop Events from production to test format
+[SUCCESS] Procedure createShopEvent completed in 1s
+[SUCCESS] ✅ Completed: 10 - Create Shop Events - Create Shop Events completed
+=================================================================
+=================================================================
+
+[19:42:20] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 11 completed: 10_createShopEvent.sh
+[19:42:20] 📍 Step 12/14: 11_ConvertMeasureUnits.sh
+[19:42:20] DEBUG: Executing ./migration/steps_v2/11_ConvertMeasureUnits.sh...
+[19:42:20] 🚀 Starting: 11 - Create Measure Units
+
+=================================================================
+=================================================================
+[19:42:20] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:20] Executing procedure: ConvertMeasureUnits
+[19:42:20] Description: Create Measure Units from production to test format
+[SUCCESS] Procedure ConvertMeasureUnits completed in 4s
+[SUCCESS] ✅ Completed: 11 - Create Measure Units - Convert Measure Units completed
+=================================================================
+=================================================================
+
+[19:42:24] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 12 completed: 11_ConvertMeasureUnits.sh
+[19:42:24] 📍 Step 13/14: 12_convertIndices.sh
+[19:42:24] DEBUG: Executing ./migration/steps_v2/12_convertIndices.sh...
+[19:42:24] 🚀 Starting: 12 - Convert Indices
+
+=================================================================
+=================================================================
+[19:42:24] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:42:24] Executing procedure: convertIndices
+[19:42:24] Description: Convert Indices from production to test format
+[SUCCESS] Procedure convertIndices completed in 11s
+[SUCCESS] ✅ Completed: 12 - Convert Indices - Convert Indices completed
+=================================================================
+=================================================================
+
+[19:42:35] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 13 completed: 12_convertIndices.sh
+[19:42:35] 📍 Step 14/14: 13_stop_tunnels.sh
+[19:42:35] DEBUG: Executing ./migration/steps_v2/13_stop_tunnels.sh...
+[19:42:35] 🚀 Starting: 13 - Stop SSH Tunnels
+
+=================================================================
+=================================================================
+[19:42:35] Stopping SSH tunnels...
+[SUCCESS] SSH tunnels stopped successfully
+[SUCCESS] ✅ Completed: 13 - Stop SSH Tunnels - SSH tunnels closed cleanly
+=================================================================
+=================================================================
+
+[19:42:35] Migration cleanup complete
+[19:42:35] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 14 completed: 13_stop_tunnels.sh
+[SUCCESS] 🎉 MIGRATION COMPLETED SUCCESSFULLY!
+[19:42:35] 📊 Final Summary:
+[19:42:35]   Total steps: 14
+[19:42:35]   All steps completed successfully
+[19:42:35]   Total duration: 92s
+[19:42:35]   Log file: migration-logs/25-09-11 19:41 migration.log
+[19:42:35] Next steps:
+[19:42:35]   1. Validate migrated data
+[19:42:35]   2. Test your application with migrated data
+[19:42:35]   3. SSH tunnels have been closed automatically
+[SUCCESS] Migration process complete! 🎊

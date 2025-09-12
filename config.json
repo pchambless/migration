@@ -1,0 +1,80 @@
+{
+  "source": {
+    "host": "whatsfresh.app",
+    "database": "whatsfresh",
+    "user": "paul"
+  },
+  "target": {
+    "host": "159.223.104.19", 
+    "database": "whatsfresh",
+    "user": "wf_admin",
+    "ssh_key": "~/.ssh/id_rsa"
+  },
+  "cleanup_order": [
+    "product_batch_ingredients",
+    "product_batch_tasks",
+    "product_recipes", 
+    "product_batches",
+    "products",
+    "ingredient_batches",
+    "shop_event",
+    "measures",
+    "account_settings"
+  ],
+  "procedures_ordered": [
+    "convertIngrBtch",
+    "convertProd",
+    "convertProdBtch",
+    "convertRcpeBtch",
+    "convertTaskBtch",
+    "convertProdIngr_Map",
+    "createShopEvent",
+    "ConvertMeasureUnits",
+    "convertIndices"
+  ],
+  "migration_settings": {
+    "backup_before_migration": true,
+    "validate_data_integrity": true,
+    "batch_size": 1000,
+    "timeout_seconds": 7200,
+    "retry_attempts": 3,
+    "respect_foreign_keys": true
+  },
+  "pre_migration_checks": [
+    "SELECT COUNT(*) as source_ingredient_batches FROM ingredient_batches",
+    "SELECT COUNT(*) as source_product_batches FROM product_batches",
+    "SELECT COUNT(*) as source_products FROM products",
+    "SELECT COUNT(*) as source_measures FROM measures"
+  ],
+  "copy_tables_order": [
+    "accounts",
+    "users", 
+    "accounts_users",
+    "brands",
+    "vendors",
+    "ingredient_types",
+    "product_types",
+    "ingredients",
+    "products",
+    "tasks",
+    "workers"
+  ],
+  "post_migration_validation": [
+    "SELECT COUNT(*) as target_ingredient_batches FROM whatsfresh.ingredient_batches",
+    "SELECT COUNT(*) as target_product_batches FROM whatsfresh.product_batches", 
+    "SELECT COUNT(*) as target_products FROM whatsfresh.products",
+    "SELECT COUNT(*) as target_measures FROM whatsfresh.measures",
+    "SELECT COUNT(*) as target_shop_events FROM whatsfresh.shop_event"
+  ],
+  "legacy_config": {
+    "tables": [
+      "ingredient_batches",
+      "product_batches", 
+      "products"
+    ],
+    "procedures": [
+      "convertIngredientBatches",
+      "convertProdBtch"
+    ]
+  }
+}

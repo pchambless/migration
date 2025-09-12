@@ -1,0 +1,55 @@
+✅ v_account_tracking - OK (905ms)
+❌ v_btch_sumry - FAILED:
+    ERROR 1267 (HY000) at line 1: Illegal mix of collations 
+    (utf8mb4_0900_ai_ci,COERCIBLE) and (utf8mb4_general_ci,COERCIBLE) for 
+    operation '='
+
+✅ v_btch_trace - OK (979ms)
+✅ v_ingr_btch_dtl - OK (785ms)
+✅ v_ingr_btch_metrics - OK (1147ms)
+❌ v_ingr_btch_sum - FAILED:
+    ERROR 1267 (HY000) at line 1: Illegal mix of collations 
+    (utf8mb4_0900_ai_ci,COERCIBLE) and (utf8mb4_general_ci,COERCIBLE) for 
+    operation '<>'
+
+❌ v_ingr_btch_trace - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_ingr_btch_trace' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+✅ v_ingr_pricing - OK (683ms)
+✅ v_ingr_sumry - OK (343ms)
+❌ v_prdBtchIngr_Map - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_prdBtchIngr_Map' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+✅ v_prd_btch_dtl - OK (345ms)
+❌ v_prd_btch_ingr_dtl - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_prd_btch_ingr_dtl' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+✅ v_prd_btch_last - OK (3693ms)
+✅ v_prd_btch_sumry - OK (715ms)
+✅ v_prd_btch_task_dtl - OK (2150ms)
+❌ v_prd_rcpe_active - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_prd_rcpe_active' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+❌ v_prd_rcpe_dtl - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_prd_rcpe_dtl' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ v_prd_type_tasks - OK (762ms)
+✅ v_prd_type_tasks_active - OK (967ms)
+❌ v_products - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'whatsfresh.v_products' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ v_shop_event - OK (1120ms)
+✅ v_userLogin - OK (598ms)
+✅ v_wf_usr_dtl - OK (1020ms)

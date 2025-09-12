@@ -1,0 +1,47 @@
+
+=================================================================
+[0;34m[19:16:36][0m 🚀 Starting: 00 - Start SSH Tunnels
+=================================================================
+[0;34m[19:16:36][0m Checking SSH tunnel status...
+[0;34m[19:16:36][0m Checking tunnel status...
+[0;31m[ERROR][0m Production tunnel not accessible on port 13306
+[0;31m[ERROR][0m Run: ./session/start.sh prodServer
+[0;34m[19:16:36][0m Starting SSH tunnel manager...
+[0;34m[19:16:50][0m Waiting 5 seconds for tunnels to establish...
+[0;34m[19:16:55][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;32m[SUCCESS][0m Both SSH tunnels started and accessible
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 00 - Start SSH Tunnels - SSH tunnels started successfully
+=================================================================
+
+
+=================================================================
+[0;34m[19:16:55][0m 🚀 Starting: 01 - Clear Staging Database
+=================================================================
+[0;34m[19:16:55][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:16:56][0m Clearing wf_stage database...
+[0;32m[SUCCESS][0m wf_stage database cleared successfully
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 01 - Clear Staging Database - Staging database ready for fresh data
+=================================================================
+
+
+=================================================================
+[0;34m[19:16:57][0m 🚀 Starting: 02 - Bulk Copy to Staging
+=================================================================
+[0;34m[19:16:57][0m Checking tunnel status...
+[0;32m[SUCCESS][0m Both tunnels are accessible
+[0;34m[19:16:57][0m Bulk copying 17 tables to wf_stage database...
+[0;34m[19:16:57][0m Ensuring wf_stage database exists...
+[0;34m[19:16:58][0m Exporting 17 tables from production...
+[0;34m[19:17:07][0m Bulk export completed successfully
+[0;34m[19:17:07][0m Importing tables to wf_stage database...
+[0;34m[19:17:28][0m Bulk import completed successfully
+[0;34m[19:17:28][0m Removing generated columns from staging tables...
+[0;32m[SUCCESS][0m Bulk copy completed: 17 tables in 31s
+=================================================================
+[0;32m[SUCCESS][0m ✅ Completed: 02 - Bulk Copy to Staging - All tables copied to wf_stage and generated columns removed
+=================================================================
+

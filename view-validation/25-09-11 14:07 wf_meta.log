@@ -1,0 +1,46 @@
+✅ v_account_tracking - OK (903ms)
+❌ v_actvty_acct_daily - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_actvty_acct_daily' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+✅ v_actvty_acct_monthly - OK (649ms)
+❌ v_actvty_acct_sumry - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_actvty_acct_sumry' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+❌ v_actvty_acct_user_sumry - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_actvty_acct_user_sumry' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+❌ v_actvty_acct_weekly - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_actvty_acct_weekly' 
+    references invalid table(s) or column(s) or function(s) or definer/invoker 
+    of view lack rights to use them
+
+✅ v_actvty_acct_yearly - OK (730ms)
+❌ v_actvty_log_dtl - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_actvty_log_dtl' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ v_appsmithXref - OK (528ms)
+✅ v_appsmith_hier - OK (899ms)
+✅ v_help - OK (653ms)
+✅ v_mermaid_pages - OK (774ms)
+✅ v_pages_hier - OK (1021ms)
+✅ v_pages_w_parent - OK (707ms)
+❌ v_prd_rcpe_dtl - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_prd_rcpe_dtl' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ v_procParents - OK (863ms)
+❌ v_wf_usr_dtl - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'wf_meta.v_wf_usr_dtl' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ v_whatsfresh_menu - OK (812ms)

@@ -1,0 +1,125 @@
+[19:34:32] 🚀 Starting Complete Migration Process
+[19:34:32] ======================================
+[19:34:32] Running pre-flight checks...
+[19:34:32] Tunnel management will be handled by step 00
+[SUCCESS] Pre-flight checks passed
+[19:34:32] Starting migration with 14 steps...
+[19:34:32] About to start executing steps...
+[19:34:32] DEBUG: Testing loop entry...
+[19:34:32] DEBUG: Number of steps in array: 14
+[19:34:32] DEBUG: First step: 00_start_tunnels.sh
+[19:34:32] DEBUG: Starting for loop...
+[19:34:32] 📍 Step 1/14: 00_start_tunnels.sh
+[19:34:32] DEBUG: Executing ./migration/steps_v2/00_start_tunnels.sh...
+[19:34:32] 🚀 Starting: 00 - Start SSH Tunnels
+
+=================================================================
+=================================================================
+[19:34:32] Checking SSH tunnel status...
+[19:34:32] Checking tunnel status...
+[ERROR] Production tunnel not accessible on port 13306
+[ERROR] Run: ./session/start.sh prodServer
+[19:34:32] Starting SSH tunnel manager...
+[19:34:43] Waiting 5 seconds for tunnels to establish...
+[19:34:48] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[SUCCESS] Both SSH tunnels started and accessible
+[SUCCESS] ✅ Completed: 00 - Start SSH Tunnels - SSH tunnels started successfully
+=================================================================
+=================================================================
+
+[19:34:48] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 1 completed: 00_start_tunnels.sh
+[19:34:48] 📍 Step 2/14: 01_clear_wf_stage.sh
+[19:34:48] DEBUG: Executing ./migration/steps_v2/01_clear_wf_stage.sh...
+[19:34:48] 🚀 Starting: 01 - Clear Staging Database
+
+=================================================================
+=================================================================
+[19:34:48] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:34:48] Clearing wf_stage database...
+[SUCCESS] wf_stage database cleared successfully
+[SUCCESS] ✅ Completed: 01 - Clear Staging Database - Staging database ready for fresh data
+=================================================================
+=================================================================
+
+[19:34:50] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 2 completed: 01_clear_wf_stage.sh
+[19:34:50] 📍 Step 3/14: 02_bulk_copy_to_staging.sh
+[19:34:50] DEBUG: Executing ./migration/steps_v2/02_bulk_copy_to_staging.sh...
+[19:34:50] 🚀 Starting: 02 - Bulk Copy to Staging
+
+=================================================================
+=================================================================
+[19:34:50] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:34:50] Bulk copying 17 tables to wf_stage database...
+[19:34:50] Ensuring wf_stage database exists...
+[19:34:50] Exporting 17 tables from production...
+[19:34:59] Bulk export completed successfully
+[19:34:59] Importing tables to wf_stage database...
+[19:35:21] Bulk import completed successfully
+[19:35:21] Removing generated columns from staging tables...
+[SUCCESS] Bulk copy completed: 17 tables in 32s
+[SUCCESS] ✅ Completed: 02 - Bulk Copy to Staging - All tables copied to wf_stage and generated columns removed
+=================================================================
+=================================================================
+
+[19:35:22] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 3 completed: 02_bulk_copy_to_staging.sh
+[19:35:22] 📍 Step 4/14: 03_setup_whatsfresh.sh
+[19:35:22] DEBUG: Executing ./migration/steps_v2/03_setup_whatsfresh.sh...
+[19:35:25] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 4 completed: 03_setup_whatsfresh.sh
+[19:35:25] 📍 Step 5/14: 04_convertIngrBtch.sh
+[19:35:25] DEBUG: Executing ./migration/steps_v2/04_convertIngrBtch.sh...
+[19:35:26] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 5 completed: 04_convertIngrBtch.sh
+[19:35:26] 📍 Step 6/14: 05_convertProd.sh
+[19:35:26] DEBUG: Executing ./migration/steps_v2/05_convertProd.sh...
+[19:35:27] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 6 completed: 05_convertProd.sh
+[19:35:27] 📍 Step 7/14: 06_convertProdBtch.sh
+[19:35:27] DEBUG: Executing ./migration/steps_v2/06_convertProdBtch.sh...
+[19:35:28] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 7 completed: 06_convertProdBtch.sh
+[19:35:28] 📍 Step 8/14: 07_convertRcpeBtch.sh
+[19:35:28] DEBUG: Executing ./migration/steps_v2/07_convertRcpeBtch.sh...
+[19:35:28] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 8 completed: 07_convertRcpeBtch.sh
+[19:35:28] 📍 Step 9/14: 08_convertTaskBtch.sh
+[19:35:28] DEBUG: Executing ./migration/steps_v2/08_convertTaskBtch.sh...
+[19:35:29] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 9 completed: 08_convertTaskBtch.sh
+[19:35:29] 📍 Step 10/14: 09_convertProdIngr_Map.sh
+[19:35:29] DEBUG: Executing ./migration/steps_v2/09_convertProdIngr_Map.sh...
+[19:35:45] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 10 completed: 09_convertProdIngr_Map.sh
+[19:35:45] 📍 Step 11/14: 10_createShopEvent.sh
+[19:35:45] DEBUG: Executing ./migration/steps_v2/10_createShopEvent.sh...
+[19:35:46] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 11 completed: 10_createShopEvent.sh
+[19:35:46] 📍 Step 12/14: 11_ConvertMeasureUnits.sh
+[19:35:46] DEBUG: Executing ./migration/steps_v2/11_ConvertMeasureUnits.sh...
+[19:35:50] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 12 completed: 11_ConvertMeasureUnits.sh
+[19:35:50] 📍 Step 13/14: 12_convertIndices.sh
+[19:35:50] DEBUG: Executing ./migration/steps_v2/12_convertIndices.sh...
+[19:36:00] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 13 completed: 12_convertIndices.sh
+[19:36:00] 📍 Step 14/14: 13_stop_tunnels.sh
+[19:36:00] DEBUG: Executing ./migration/steps_v2/13_stop_tunnels.sh...
+[19:36:00] DEBUG: Step returned exit code: 0
+[SUCCESS] Step 14 completed: 13_stop_tunnels.sh
+[SUCCESS] 🎉 MIGRATION COMPLETED SUCCESSFULLY!
+[19:36:00] 📊 Final Summary:
+[19:36:00]   Total steps: 14
+[19:36:00]   All steps completed successfully
+[19:36:00]   Total duration: 88s
+[19:36:00]   Log file: migration-logs/25-09-11 19:34 migration.log
+[19:36:00] Next steps:
+[19:36:00]   1. Validate migrated data
+[19:36:00]   2. Test your application with migrated data
+[19:36:00]   3. SSH tunnels have been closed automatically
+[SUCCESS] Migration process complete! 🎊

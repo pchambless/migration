@@ -1,0 +1,130 @@
+[19:35:22] 🚀 Starting: 03 - Setup Whatsfresh Database
+
+=================================================================
+=================================================================
+[19:35:22] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:22] Executing procedure: copyToWhatsfresh
+[19:35:22] Description: Clear whatsfresh and copy base tables from wf_stage
+[SUCCESS] Procedure copyToWhatsfresh completed in 3s
+[SUCCESS] ✅ Completed: 03 - Setup Whatsfresh Database - Base tables copied to whatsfresh successfully
+=================================================================
+=================================================================
+
+[19:35:25] 🚀 Starting: 04 - Convert Ingredient Batches
+
+=================================================================
+=================================================================
+[19:35:25] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:25] Executing procedure: convertIngrBtch
+[19:35:25] Description: Converting ingredient batches from production to test format
+[SUCCESS] Procedure convertIngrBtch completed in 1s
+[SUCCESS] ✅ Completed: 04 - Convert Ingredient Batches - Ingredient batches converted
+=================================================================
+=================================================================
+
+[19:35:26] 🚀 Starting: 05 - Convert Products
+
+=================================================================
+=================================================================
+[19:35:26] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:26] Executing procedure: convertProd
+[19:35:26] Description: Converting products from production to test format
+[SUCCESS] Procedure convertProd completed in 1s
+[SUCCESS] ✅ Completed: 05 - Convert Products - Products converted
+=================================================================
+=================================================================
+
+[19:35:27] 🚀 Starting: 06 - Convert Product Batches
+
+=================================================================
+=================================================================
+[19:35:27] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:27] Executing procedure: convertProdBtch
+[19:35:27] Description: Convert Product Batches from production to test format
+[SUCCESS] Procedure convertProdBtch completed in 1s
+[SUCCESS] ✅ Completed: 06 - Convert Product Batches - Convert Product Batches completed
+=================================================================
+=================================================================
+
+[19:35:28] 🚀 Starting: 07 - Convert Recipe Batches
+
+=================================================================
+=================================================================
+[19:35:28] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:28] Executing procedure: convertRcpeBtch
+[19:35:28] Description: Convert Recipe Batches from production to test format
+[SUCCESS] Procedure convertRcpeBtch completed in 0s
+[SUCCESS] ✅ Completed: 07 - Convert Recipe Batches - Convert Recipe Batches completed
+=================================================================
+=================================================================
+
+[19:35:28] 🚀 Starting: 08 - Convert Task Batches
+
+=================================================================
+=================================================================
+[19:35:28] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:28] Executing procedure: convertTaskBtch
+[19:35:28] Description: Convert Task Batches from production to test format
+[SUCCESS] Procedure convertTaskBtch completed in 1s
+[SUCCESS] ✅ Completed: 08 - Convert Task Batches - Convert Task Batches completed
+=================================================================
+=================================================================
+
+[19:35:29] 🚀 Starting: 09 - Convert Product Ingredient Mapping
+
+=================================================================
+=================================================================
+[19:35:29] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:29] Executing procedure: convertProdIngr_Map
+[19:35:29] Description: Convert Product Ingredient Mapping from production to test format
+[SUCCESS] Procedure convertProdIngr_Map completed in 16s
+[SUCCESS] ✅ Completed: 09 - Convert Product Ingredient Mapping - Convert Product Ingredient Mapping completed
+=================================================================
+=================================================================
+
+[19:35:45] 🚀 Starting: 10 - Create Shop Events
+
+=================================================================
+=================================================================
+[19:35:45] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:45] Executing procedure: createShopEvent
+[19:35:45] Description: Create Shop Events from production to test format
+[SUCCESS] Procedure createShopEvent completed in 1s
+[SUCCESS] ✅ Completed: 10 - Create Shop Events - Create Shop Events completed
+=================================================================
+=================================================================
+
+[19:35:46] 🚀 Starting: 11 - Create Measure Units
+
+=================================================================
+=================================================================
+[19:35:46] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:46] Executing procedure: ConvertMeasureUnits
+[19:35:46] Description: Create Measure Units from production to test format
+[SUCCESS] Procedure ConvertMeasureUnits completed in 4s
+[SUCCESS] ✅ Completed: 11 - Create Measure Units - Convert Measure Units completed
+=================================================================
+=================================================================
+
+[19:35:50] 🚀 Starting: 12 - Convert Indices
+
+=================================================================
+=================================================================
+[19:35:50] Checking tunnel status...
+[SUCCESS] Both tunnels are accessible
+[19:35:50] Executing procedure: convertIndices
+[19:35:50] Description: Convert Indices from production to test format
+[SUCCESS] Procedure convertIndices completed in 10s
+[SUCCESS] ✅ Completed: 12 - Convert Indices - Convert Indices completed
+=================================================================
+=================================================================
+

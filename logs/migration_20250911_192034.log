@@ -1,0 +1,72 @@
+[0;34m[19:20:34][0m 🚀 Starting Complete Migration Process
+[0;34m[19:20:34][0m ======================================
+[0;34m[19:20:34][0m Running pre-flight checks...
+[0;34m[19:20:34][0m Tunnel management will be handled by step 00
+[0;32m[SUCCESS][0m Pre-flight checks passed
+[0;34m[19:20:34][0m Starting migration with 14 steps...
+[0;34m[19:20:34][0m About to start executing steps...
+[0;34m[19:20:34][0m DEBUG: Testing loop entry...
+[0;34m[19:20:34][0m DEBUG: Number of steps in array: 14
+[0;34m[19:20:34][0m DEBUG: First step: 00_start_tunnels.sh
+[0;34m[19:20:34][0m DEBUG: Starting for loop...
+[0;34m[19:20:34][0m 📍 Step 1/14: 00_start_tunnels.sh
+[0;34m[19:20:34][0m DEBUG: Executing ./migration/steps_v2/00_start_tunnels.sh...
+[0;34m[19:20:50][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 1 completed: 00_start_tunnels.sh
+[0;34m[19:20:50][0m 📍 Step 2/14: 01_clear_wf_stage.sh
+[0;34m[19:20:50][0m DEBUG: Executing ./migration/steps_v2/01_clear_wf_stage.sh...
+[0;34m[19:20:53][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 2 completed: 01_clear_wf_stage.sh
+[0;34m[19:20:53][0m 📍 Step 3/14: 02_bulk_copy_to_staging.sh
+[0;34m[19:20:53][0m DEBUG: Executing ./migration/steps_v2/02_bulk_copy_to_staging.sh...
+[0;34m[19:21:25][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 3 completed: 02_bulk_copy_to_staging.sh
+[0;34m[19:21:25][0m 📍 Step 4/14: 03_setup_whatsfresh.sh
+[0;34m[19:21:25][0m DEBUG: Executing ./migration/steps_v2/03_setup_whatsfresh.sh...
+[0;34m[19:21:28][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 4 completed: 03_setup_whatsfresh.sh
+[0;34m[19:21:28][0m 📍 Step 5/14: 04_convertIngrBtch.sh
+[0;34m[19:21:28][0m DEBUG: Executing ./migration/steps_v2/04_convertIngrBtch.sh...
+[0;34m[19:21:29][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 5 completed: 04_convertIngrBtch.sh
+[0;34m[19:21:29][0m 📍 Step 6/14: 05_convertProd.sh
+[0;34m[19:21:29][0m DEBUG: Executing ./migration/steps_v2/05_convertProd.sh...
+[0;34m[19:21:30][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 6 completed: 05_convertProd.sh
+[0;34m[19:21:30][0m 📍 Step 7/14: 06_convertProdBtch.sh
+[0;34m[19:21:30][0m DEBUG: Executing ./migration/steps_v2/06_convertProdBtch.sh...
+[0;34m[19:21:31][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 7 completed: 06_convertProdBtch.sh
+[0;34m[19:21:31][0m 📍 Step 8/14: 07_convertRcpeBtch.sh
+[0;34m[19:21:31][0m DEBUG: Executing ./migration/steps_v2/07_convertRcpeBtch.sh...
+[0;34m[19:21:31][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 8 completed: 07_convertRcpeBtch.sh
+[0;34m[19:21:31][0m 📍 Step 9/14: 08_convertTaskBtch.sh
+[0;34m[19:21:31][0m DEBUG: Executing ./migration/steps_v2/08_convertTaskBtch.sh...
+[0;34m[19:21:33][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 9 completed: 08_convertTaskBtch.sh
+[0;34m[19:21:33][0m 📍 Step 10/14: 09_convertProdIngr_Map.sh
+[0;34m[19:21:33][0m DEBUG: Executing ./migration/steps_v2/09_convertProdIngr_Map.sh...
+[0;34m[19:21:49][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 10 completed: 09_convertProdIngr_Map.sh
+[0;34m[19:21:49][0m 📍 Step 11/14: 10_createShopEvent.sh
+[0;34m[19:21:49][0m DEBUG: Executing ./migration/steps_v2/10_createShopEvent.sh...
+[0;34m[19:21:50][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 11 completed: 10_createShopEvent.sh
+[0;34m[19:21:50][0m 📍 Step 12/14: 11_ConvertMeasureUnits.sh
+[0;34m[19:21:50][0m DEBUG: Executing ./migration/steps_v2/11_ConvertMeasureUnits.sh...
+[0;34m[19:21:54][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 12 completed: 11_ConvertMeasureUnits.sh
+[0;34m[19:21:54][0m 📍 Step 13/14: 12_convertIndices.sh
+[0;34m[19:21:54][0m DEBUG: Executing ./migration/steps_v2/12_convertIndices.sh...
+[0;34m[19:22:08][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 13 completed: 12_convertIndices.sh
+[0;34m[19:22:08][0m 📍 Step 14/14: 13_stop_tunnels.sh
+[0;34m[19:22:08][0m DEBUG: Executing ./migration/steps_v2/13_stop_tunnels.sh...
+[0;34m[19:22:08][0m DEBUG: Step returned exit code: 0
+[0;32m[SUCCESS][0m Step 14 completed: 13_stop_tunnels.sh
+[0;32m[SUCCESS][0m 🎉 MIGRATION COMPLETED SUCCESSFULLY!
+[0;34m[19:22:08][0m 📊 Final Summary:
+[0;34m[19:22:08][0m   Total steps: 14
+[0;34m[19:22:08][0m   All steps completed successfully
+[0;34m[19:22:08][0m   Total duration: 94s

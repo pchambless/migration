@@ -1,0 +1,30 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/logs": false
+  },
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.rulers": [80],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.shellcheck": true
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "sqltools.formatter"
+  },
+  "sqltools.connections": [
+    {
+      "name": "wf_staging",
+      "driver": "MySQL",
+      "server": "localhost",
+      "port": 3306,
+      "database": "wf_staging",
+      "username": "your_user",
+      "password": "your_password"
+    }
+  ]
+}

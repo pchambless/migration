@@ -1,0 +1,58 @@
+✅ acctList - OK (895ms)
+❌ apiEventList - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.apiEventList' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+❌ apiPageConfigList - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.apiPageConfigList' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+✅ brndList - OK (737ms)
+✅ btchMapRcpeList - OK (438ms)
+✅ gridMapped - OK (968ms)
+✅ gridRcpe - OK (877ms)
+✅ ingrBtchList - OK (838ms)
+✅ ingrList - OK (694ms)
+✅ ingrTypeList - OK (617ms)
+✅ measList - OK (754ms)
+❌ pageList - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.pageList' references invalid 
+    table(s) or column(s) or function(s) or definer/invoker of view lack 
+    rights to use them
+
+✅ prodBtchList - OK (728ms)
+✅ prodList - OK (697ms)
+✅ prodTypeList - OK (514ms)
+✅ rcpeList - OK (803ms)
+✅ taskList - OK (693ms)
+✅ userAcctList - OK (742ms)
+✅ userList - OK (609ms)
+❌ v_apiEvents - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.v_apiEvents' references invalid 
+    table(s) or column(s) or function(s) or definer/invoker of view lack 
+    rights to use them
+
+❌ v_apiEventsLoad - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.v_apiEventsLoad' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+❌ v_apiGroupParents - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.v_apiGroupParents' references 
+    invalid table(s) or column(s) or function(s) or definer/invoker of view 
+    lack rights to use them
+
+❌ v_apiGroups - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.v_apiGroups' references invalid 
+    table(s) or column(s) or function(s) or definer/invoker of view lack 
+    rights to use them
+
+❌ v_apiTests - FAILED:
+    ERROR 1356 (HY000) at line 1: View 'api_wf.v_apiTests' references invalid 
+    table(s) or column(s) or function(s) or definer/invoker of view lack 
+    rights to use them
+
+✅ vndrList - OK (810ms)
+✅ wrkrList - OK (738ms)

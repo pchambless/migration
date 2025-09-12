@@ -1,0 +1,27 @@
+✅ v_account_tracking - OK (604ms)
+✅ v_btch_sumry - OK (880ms)
+✅ v_btch_trace - OK (647ms)
+✅ v_ingr_btch_dtl - OK (617ms)
+✅ v_ingr_btch_metrics - OK (811ms)
+❌ v_ingr_btch_sum - FAILED:
+    ERROR 1267 (HY000) at line 1: Illegal mix of collations 
+    (utf8mb4_0900_ai_ci,COERCIBLE) and (utf8mb4_general_ci,COERCIBLE) for 
+    operation '<>'
+
+✅ v_ingr_btch_trace - OK (731ms)
+✅ v_ingr_pricing - OK (460ms)
+✅ v_ingr_sumry - OK (330ms)
+✅ v_prdBtchIngr_Map - OK (3127ms)
+✅ v_prd_btch_dtl - OK (716ms)
+✅ v_prd_btch_ingr_dtl - OK (1325ms)
+✅ v_prd_btch_last - OK (3698ms)
+✅ v_prd_btch_sumry - OK (810ms)
+✅ v_prd_btch_task_dtl - OK (1839ms)
+✅ v_prd_rcpe_active - OK (739ms)
+✅ v_prd_rcpe_dtl - OK (694ms)
+✅ v_prd_type_tasks - OK (819ms)
+✅ v_prd_type_tasks_active - OK (801ms)
+✅ v_products - OK (723ms)
+✅ v_shop_event - OK (1331ms)
+✅ v_userLogin - OK (648ms)
+✅ v_wf_usr_dtl - OK (1398ms)

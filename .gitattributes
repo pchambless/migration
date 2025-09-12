@@ -1,0 +1,21 @@
+# Ensure proper line endings for WSL compatibility
+* text=auto
+
+# Shell scripts should always use LF line endings
+*.sh text eol=lf
+
+# SQL files should use LF line endings
+*.sql text eol=lf
+
+# Configuration files should use LF line endings
+*.conf text eol=lf
+
+# Documentation files
+*.md text eol=lf
+*.txt text eol=lf
+
+# Ensure binary files are handled correctly
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary

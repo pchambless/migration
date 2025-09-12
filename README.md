@@ -64,16 +64,40 @@ Configuration files are stored in the `config/` directory:
 
 ## Usage
 
+### Quick Start for WSL
+```bash
+# 1. Run the setup script
+./scripts/setup.sh
+
+# 2. Test your WSL environment
+./scripts/test-wsl.sh
+
+# 3. Get Windows host IP (if needed for database connections)
+./scripts/wsl-helper.sh host-ip
+
+# 4. Edit configuration with your database settings
+nano config/database.conf
+```
+
 ### Running Migrations
 ```bash
-./scripts/migrate.sh up    # Apply pending migrations
-./scripts/migrate.sh down  # Rollback last migration
+./scripts/migrate.sh up     # Apply pending migrations
+./scripts/migrate.sh down   # Rollback last migration
 ./scripts/migrate.sh status # Check migration status
 ```
 
 ### Validating Database Views
 ```bash
 ./scripts/validate-views.sh
+```
+
+### WSL Helper Commands
+```bash
+./scripts/wsl-helper.sh help        # Show all available commands
+./scripts/wsl-helper.sh host-ip     # Get Windows host IP
+./scripts/wsl-helper.sh fix-perms   # Fix file permissions
+./scripts/wsl-helper.sh check-db    # Test database connectivity
+./scripts/wsl-helper.sh test        # Run environment test
 ```
 
 ## Development in WSL

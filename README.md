@@ -119,3 +119,7 @@ mysql -h localhost -P 13307 -u root -p
 ✅ **Tunnel management** - Independent server connection control  
 ✅ **Error handling** - Graceful failure handling and recovery  
 ✅ **Progress tracking** - Clear step-by-step progress indication
+=======
+# migration
+Migration orchestration and DB views validation functions
+>>>>>>> master
